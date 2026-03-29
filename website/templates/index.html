@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rupadi | IT Solutions & Business Services</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <style>
+
+    header .logo {
+      display: flex !important;
+      align-items: center !important;
+      flex-shrink: 0 !important;
+      background: transparent !important;
+    }
+
+    header .logo a {
+      display: flex !important;
+      align-items: center !important;
+      background: transparent !important;
+      text-decoration: none !important;
+    }
+
+    header .logo img {
+      height: 52px !important;
+      width: auto !important;
+      /* Blends dark PNG background into the dark header */
+      mix-blend-mode: screen !important;
+      filter: brightness(1.15) contrast(1.05) !important;
+      background: transparent !important;
+      max-width: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      border: none !important;
+    }
+
+    /* ── Header: fixed height, row layout ── */
+    header {
+      height: 68px !important;
+      padding: 0 !important;
+      display: flex !important;
+      align-items: center !important;
+    }
+
+    header .container {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      height: 68px !important;
+      width: 100% !important;
+    }
+
+    /* ── Nav: always horizontal on desktop, force row ── */
+    header nav {
+      display: flex !important;
+      align-items: center !important;
+      position: static !important;
+      height: auto !important;
+      width: auto !important;
+      max-width: none !important;
+      background: transparent !important;
+      padding: 0 !important;
+      box-shadow: none !important;
+      border: none !important;
+    }
+
+    header nav ul {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      flex-wrap: nowrap !important;
+      gap: 2px !important;
+      list-style: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    header nav ul li {
+      display: block !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      width: auto !important;
+    }
+
+    header nav ul li a {
+      display: inline-block !important;
+      font-size: 13.5px !important;
+      font-weight: 500 !important;
+      padding: 7px 12px !important;
+      border-radius: 6px !important;
+      border: 1px solid transparent !important;
+      color: #a1a1aa !important;
+      white-space: nowrap !important;
+      text-decoration: none !important;
+      background: transparent !important;
+      line-height: 1.4 !important;
+      transition: all 0.25s ease !important;
+    }
+
+    header nav ul li a.active,
+    header nav ul li a:hover {
+      color: #f97316 !important;
+      background: rgba(249, 115, 22, 0.1) !important;
+      border-color: rgba(249, 115, 22, 0.3) !important;
+      box-shadow: none !important;
+    }
+
+    /* ── Mobile menu button: hidden on desktop ── */
+    .mobile-menu-btn {
+      display: none !important;
+    }
+
+    /* ── Mobile breakpoint: show hamburger, hide nav ── */
+    @media (max-width: 992px) {
+      header nav ul {
+        gap: 2px !important;
+      }
+      header nav ul li a {
+        font-size: 12px !important;
+        padding: 6px 8px !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu-btn {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 40px !important;
+        height: 40px !important;
+        background: rgba(249,115,22,0.1) !important;
+        border: 1px solid rgba(249,115,22,0.3) !important;
+        border-radius: 8px !important;
+        color: #f97316 !important;
+        font-size: 18px !important;
+        cursor: pointer !important;
+      }
+
+      header nav {
+        display: none !important;
+        position: fixed !important;
+        top: 68px !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        background: rgba(14,14,18,0.98) !important;
+        backdrop-filter: blur(20px) !important;
+        border-bottom: 1px solid rgba(249,115,22,0.15) !important;
+        padding: 20px !important;
+        z-index: 999 !important;
+      }
+
+      header nav.mobile-open {
+        display: block !important;
+      }
+
+      header nav ul {
+        flex-direction: column !important;
+        gap: 4px !important;
+        align-items: stretch !important;
+      }
+
+      header nav ul li a {
+        display: block !important;
+        font-size: 15px !important;
+        padding: 12px 16px !important;
+        width: 100% !important;
+      }
+    }
+
+    /* ── Page-level dark enhancements ── */
+
+    /* Noise grain overlay for depth */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    }
+
+    /* ── HERO enhancements ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px 6px 8px;
+      background: rgba(249, 115, 22, 0.1);
+      border: 1px solid rgba(249, 115, 22, 0.3);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #fb923c;
+      letter-spacing: 0.5px;
+      margin-bottom: 24px;
+      font-family: 'Sora', sans-serif;
+    }
+
+    .hero-badge .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #f97316;
+      animation: pulse-dot 2s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 rgba(249,115,22,0.4); }
+      50% { opacity: 0.8; transform: scale(1.15); box-shadow: 0 0 0 6px rgba(249,115,22,0); }
+    }
+
+    .hero-content h1 {
+      position: relative;
+    }
+
+    .hero-content h1 .highlight {
+      background: linear-gradient(135deg, #f97316, #fb923c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+    }
+
+    .hero-content h1 .highlight::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #f97316, transparent);
+      border-radius: 2px;
+    }
+
+    .hero-img {
+      flex: 1;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-img::before {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(249,115,22,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-img img {
+      position: relative;
+      z-index: 1;
+      animation: float 6s ease-in-out infinite;
+      max-width: 100%;
+      filter: drop-shadow(0 20px 60px rgba(249,115,22,0.2));
+    }
+
+    /* Floating info cards beside hero */
+    .hero-float-cards {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .hero-float-card {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      background: rgba(20, 20, 28, 0.9);
+      border: 1px solid rgba(249,115,22,0.25);
+      border-radius: 12px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      animation: float-card 5s ease-in-out infinite;
+      max-width: 200px;
+    }
+
+    .hero-float-card:nth-child(1) {
+      top: 15%;
+      left: -10px;
+      animation-delay: 0s;
+    }
+
+    .hero-float-card:nth-child(2) {
+      bottom: 20%;
+      left: -20px;
+      animation-delay: 2.5s;
+    }
+
+    @keyframes float-card {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .hero-float-card .fc-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: rgba(249,115,22,0.15);
+      border: 1px solid rgba(249,115,22,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #f97316;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .hero-float-card .fc-text strong {
+      display: block;
+      font-family: 'Sora', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #f5f5f5;
+      line-height: 1.2;
+    }
+
+    .hero-float-card .fc-text span {
+      font-size: 11px;
+      color: #a1a1aa;
+    }
+
+    /* ── FEATURES section enhancements ── */
+    .feature-number {
+      position: absolute;
+      top: 20px;
+      right: 22px;
+      font-family: 'Sora', sans-serif;
+      font-size: 48px;
+      font-weight: 800;
+      color: rgba(249,115,22,0.06);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* ── ABOUT PREVIEW enhancements ── */
+    .about-preview {
+      background: var(--bg-surface);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-preview::before {
+      content: '';
+      position: absolute;
+      right: -100px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(249,115,22,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .about-stat-card {
+      background: rgba(249,115,22,0.06);
+      border: 1px solid rgba(249,115,22,0.15);
+      border-radius: 12px;
+      padding: 16px 22px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .about-stat-card:hover {
+      background: rgba(249,115,22,0.1);
+      border-color: rgba(249,115,22,0.35);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(249,115,22,0.15);
+    }
+
+    /* ── PORTFOLIO section enhancements ── */
+    .portfolio-preview {
+      background: var(--bg-base);
+      position: relative;
+    }
+
+    .portfolio-preview::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 1px 1px, rgba(249,115,22,0.04) 1px, transparent 0);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    .portfolio-tag {
+      display: inline-block;
+      padding: 3px 10px;
+      background: rgba(249,115,22,0.15);
+      border: 1px solid rgba(249,115,22,0.3);
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #fb923c;
+      margin-bottom: 8px;
+      font-family: 'Sora', sans-serif;
+    }
+
+    /* ── STATS STRIP ── */
+    .stats-strip {
+      background:
+        radial-gradient(ellipse 60% 70% at 30% 50%, rgba(249,115,22,0.1) 0%, transparent 60%),
+        linear-gradient(135deg, #0e0a08 0%, #0c0c0e 100%);
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stats-strip::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 1px 1px, rgba(249,115,22,0.07) 1px, transparent 0);
+      background-size: 40px 40px;
+    }
+
+    .stats-strip .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .stats-strip .stat-card {
+      background: rgba(249,115,22,0.06);
+      border: 1px solid rgba(249,115,22,0.18);
+      padding: 36px 24px;
+      border-radius: 14px;
+      text-align: center;
+      transition: all 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stats-strip .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.5s ease;
+    }
+
+    .stats-strip .stat-card:hover::before { transform: translateX(0); }
+
+    .stats-strip .stat-card:hover {
+      transform: translateY(-6px);
+      background: rgba(249,115,22,0.1);
+      border-color: rgba(249,115,22,0.4);
+      box-shadow: 0 12px 40px rgba(249,115,22,0.2);
+    }
+
+    .stats-strip .stat-card .s-icon {
+      font-size: 32px;
+      background: linear-gradient(135deg, #f97316, #fb923c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 14px;
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    .stats-strip .stat-card:hover .s-icon { transform: scale(1.15) rotate(8deg); }
+
+    .stats-strip .stat-card h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+      background: linear-gradient(135deg, #f97316, #fb923c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stats-strip .stat-card p {
+      color: #a1a1aa;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    /* ── TESTIMONIALS enhancements ── */
+    .testimonials {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonials::before {
+      content: '';
+      position: absolute;
+      left: -100px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(249,115,22,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .testimonial {
+      background: rgba(24,24,31,0.85);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      transition: all 0.35s ease;
+      max-width: 480px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #f97316, transparent);
+      transform: translateX(-100%);
+      transition: transform 0.5s ease;
+    }
+
+    .testimonial:hover::before { transform: translateX(0); }
+
+    .testimonial:hover {
+      transform: translateY(-6px);
+      border-color: rgba(249,115,22,0.35);
+      box-shadow: 0 16px 48px rgba(249,115,22,0.15);
+    }
+
+    .testimonial .quote i {
+      font-size: 28px;
+      background: linear-gradient(135deg, #f97316, #fb923c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .testimonial-stars {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 16px;
+    }
+
+    .testimonial-stars i {
+      color: #f97316;
+      font-size: 13px;
+    }
+
+    .testimonial-img img {
+      border: 2px solid rgba(249,115,22,0.4);
+    }
+
+    /* ── CTA section enhancements ── */
+    .cta {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 1px 1px, rgba(249,115,22,0.06) 1px, transparent 0);
+      background-size: 36px 36px;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-glow {
+      position: absolute;
+      width: 600px;
+      height: 300px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(ellipse, rgba(249,115,22,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-content h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: #f5f5f5;
+      margin-bottom: 16px;
+    }
+
+    .cta-content p {
+      color: #a1a1aa;
+      font-size: 1.1rem;
+      margin-bottom: 36px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── FOOTER enhancements ── */
+    footer {
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(249,115,22,0.4), transparent);
+    }
+
+    .footer-brand p {
+      color: #71717a;
+      font-size: 14px;
+      line-height: 1.7;
+      margin-top: 12px;
+    }
+
+    /* ── Scroll-to-top button ── */
+    .scroll-top {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, #f97316, #ea580c);
+      border: none;
+      border-radius: 12px;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(249,115,22,0.35);
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .scroll-top:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(249,115,22,0.5);
+    }
+
+    /* ── SECTION divider lines ── */
+    .section-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(249,115,22,0.2), transparent);
+      margin: 0;
+    }
+
+    .logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 6px rgba(180,140,60,0.45));
+  transition: 0.3s;
+}
+
+.logo-img:hover {
+  filter: drop-shadow(0 0 12px rgba(200,160,70,0.65));
+}
+
+.logo-divider {
+  width: 1px;
+  height: 28px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(255,255,255,0.12) 40%,
+    rgba(255,255,255,0.12) 60%,
+    transparent
+  );
+}
+
+.logo-name {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.logo-name em {
+  color: #ff6200;
+  font-style: normal;
+}
+
+    /* ── Responsive fixes ── */
+    @media (max-width: 768px) {
+      .hero { min-height: auto; padding: 100px 0 60px; }
+      .hero-float-card { display: none; }
+      .stats-strip .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .cta-buttons { flex-direction: column; align-items: center; }
+    }
+
+    @media (max-width: 576px) {
+      .stats-strip .stats-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════ HEADER ════════════════════ -->
+<header>
+  <div class="container">
+    <div class="logo">
+      <a href="index.html">
+        <img src="../assets/images/logo.png" alt="Rupadi Logo" height="40">
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="careerPage.html">Career</a></li>
+      </ul>
+    </nav>
+    <div class="mobile-menu-btn">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+</header>
+
+<!-- ════════════════════ HERO ════════════════════ -->
+<section class="hero">
+  <div class="container">
+
+    <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
+      <!-- Live badge -->
+      <div class="hero-badge">
+        <span class="dot"></span>
+        
+      </div>
+
+      <h1>
+        IT Solutions &amp;<br>
+        <span class="highlight">Business Services</span>
+      </h1>
+      <p>Empowering businesses with cutting-edge technology solutions that drive growth, innovation, and measurable results.</p>
+
+      <div class="hero-buttons">
+        <a href="contact.html" class="btn btn-primary">
+          <i class="fas fa-rocket" style="margin-right:8px;"></i>
+          Create the Future Together
+        </a>
+        <a href="services.html" class="btn btn-outline">
+          Our Services <i class="fas fa-arrow-right" style="margin-left:8px;"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-img" data-aos="fade-left" data-aos-delay="200">
+      <!-- Floating ambient cards -->
+   
+      <img src="../assets/images/hero.png" alt="Hero Image">
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ════════════════════ STATS STRIP ════════════════════ -->
+<section class="stats-strip">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="s-icon"><i class="fas fa-check-circle"></i></div>
+        <h3>500<span style="font-size:2rem;">+</span></h3>
+        <p>Projects Completed</p>
+      </div>
+      <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="s-icon"><i class="fas fa-smile"></i></div>
+        <h3>100<span style="font-size:2rem;">+</span></h3>
+        <p>Happy Clients</p>
+      </div>
+      <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="s-icon"><i class="fas fa-users"></i></div>
+        <h3>50<span style="font-size:2rem;">+</span></h3>
+        <p>Team Members</p>
+      </div>
+      <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="s-icon"><i class="fas fa-award"></i></div>
+        <h3>10<span style="font-size:2rem;">+</span></h3>
+        <p>Years Experience</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+<!-- ════════════════════ FEATURES ════════════════════ -->
+<section class="features">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="subtitle">What We Offer</span>
+      <h2>Our Featured Services</h2>
+      <p>We provide innovative solutions tailored to your business needs</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature" data-aos="fade-up" data-aos-delay="100">
+        <span class="feature-number">01</span>
+        <div class="icon"><i class="fas fa-laptop-code"></i></div>
+        <h3>Web Development</h3>
+        <p>Custom website development using latest technologies and frameworks for scalable, performant, and beautiful digital experiences.</p>
+        <a href="services-details.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="feature" data-aos="fade-up" data-aos-delay="200">
+        <span class="feature-number">02</span>
+        <div class="icon"><i class="fas fa-mobile-alt"></i></div>
+        <h3>Mobile App Development</h3>
+        <p>Building native and cross-platform mobile applications that deliver exceptional UX and performance for your business.</p>
+        <a href="services-details.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="feature" data-aos="fade-up" data-aos-delay="300">
+        <span class="feature-number">03</span>
+        <div class="icon"><i class="fas fa-database"></i></div>
+        <h3>Cloud Solutions</h3>
+        <p>Scalable cloud services to optimize your business operations, reduce costs, enhance security, and accelerate digital transformation.</p>
+        <a href="service-cloud.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ════════════════════ ABOUT PREVIEW ════════════════════ -->
+<section class="about-preview">
+  <div class="container">
+    <div class="about-image" data-aos="fade-left" data-aos-delay="200">
+      <img src="../assets/images/about-img.png" alt="About Us" class="img-fluid">
+    </div>
+
+    <div class="about-content" data-aos="fade-right" data-aos-delay="100">
+      <span class="subtitle">About Us</span>
+      <h2>We're Leading Technology Solutions Provider</h2>
+      <p>With over 10 years of experience, we've been delivering cutting-edge technology solutions to businesses worldwide, helping them transform and grow in the digital era.</p>
+
+      <div class="about-stats">
+        <div class="about-stat-card stat">
+          <h3>500+</h3>
+          <p>Projects Completed</p>
+        </div>
+        <div class="about-stat-card stat">
+          <h3>100+</h3>
+          <p>Happy Clients</p>
+        </div>
+        <div class="about-stat-card stat">
+          <h3>50+</h3>
+          <p>Team Members</p>
+        </div>
+      </div>
+
+      <a href="about.html" class="btn btn-primary">
+        Learn More About Us <i class="fas fa-arrow-right" style="margin-left:8px;"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ════════════════════ PORTFOLIO ════════════════════ -->
+<section class="portfolio-preview">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="subtitle">Our Work</span>
+      <h2>Recent Projects</h2>
+      <p>Check out some of our recent projects that showcase our expertise and commitment to quality</p>
+    </div>
+
+    <div class="portfolio-grid">
+      <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
+        <img src="../assets/images/portfolio-1.jpg" alt="Project 1" class="img-fluid">
+        <div class="portfolio-overlay">
+          <span class="portfolio-tag">Web Development</span>
+          <h3>E-Commerce Solution</h3>
+          <p>Full-stack e-commerce platform</p>
+          <a href="portfolio-details.html" class="btn-view">View Details</a>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
+        <img src="../assets/images/portfolio-2.jpg" alt="Project 2" class="img-fluid">
+        <div class="portfolio-overlay">
+          <span class="portfolio-tag">Mobile Development</span>
+          <h3>Banking App</h3>
+          <p>Secure fintech mobile application</p>
+          <a href="portfolio-details.html" class="btn-view">View Details</a>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-aos="fade-up" data-aos-delay="300">
+        <img src="../assets/images/portfolio-3.jpg" alt="Project 3" class="img-fluid">
+        <div class="portfolio-overlay">
+          <span class="portfolio-tag">Cloud Services</span>
+          <h3>Cloud Migration</h3>
+          <p>Enterprise infrastructure modernisation</p>
+          <a href="portfolio-details.html" class="btn-view">View Details</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-5" data-aos="fade-up">
+      <a href="portfolio.html" class="btn btn-outline">
+        View All Projects <i class="fas fa-arrow-right" style="margin-left:8px;"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ════════════════════ TESTIMONIALS ════════════════════ -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="subtitle">Testimonials</span>
+      <h2>What Our Clients Say</h2>
+      <p>Hear from our satisfied clients about their experience working with us</p>
+    </div>
+
+    <div class="testimonials-slider" data-aos="fade-up">
+      <div class="testimonial" data-aos="fade-up" data-aos-delay="100">
+        <div class="testimonial-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <div class="quote"><i class="fas fa-quote-left"></i></div>
+        <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam mollitia aut possimus culpa! Perspiciatis placeat laborum ducimus est deleniti. Ea optio hic voluptates odio cupiditate vitae accusantium dolorem eligendi expedita."</p>
+        <div class="client-info">
+          <div class="testimonial-img">
+            <img src="../assets/images/testimonial-1.jpg" alt="Testimonial 1" class="client-img">
+          </div>
+          <div>
+            <h4>XYZ</h4>
+            <p>CEO, Tech Company</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial" data-aos="fade-up" data-aos-delay="200">
+        <div class="testimonial-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <div class="quote"><i class="fas fa-quote-left"></i></div>
+        <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam debitis, ex maxime facere numquam quia facilis corrupti, commodi, dignissimos deserunt perferendis rerum labore! Natus, quae?"</p>
+        <div class="client-info">
+          <div class="testimonial-img">
+            <img src="../assets/images/testimonial-1.jpg" alt="Testimonial 2" class="client-img">
+          </div>
+          <div>
+            <h4>ABC</h4>
+            <p>CTO, Retail Solutions</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ════════════════════ CTA ════════════════════ -->
+<section class="cta">
+  <div class="cta-glow"></div>
+  <div class="container">
+    <div class="cta-content" data-aos="zoom-in">
+      <h2>Ready to Start Your Next Project?</h2>
+      <p>Let's talk about how we can help your business grow with our technology solutions.</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn btn-primary">
+          <i class="fas fa-paper-plane" style="margin-right:8px;"></i>
+          Contact Us Today
+        </a>
+        <a href="services.html" class="btn btn-outline">
+          Explore Services <i class="fas fa-arrow-right" style="margin-left:8px;"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ FOOTER ════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+
+      <div class="footer-col footer-brand">
+        <div class="logo">
+          <a href="index.html">
+            <img src="../assets/images/logo.png" alt="Rupadi Logo" height="40">
+          </a>
+        </div>
+        <p>Rupadi International Private Ltd.<br>Providing innovative technology solutions to businesses worldwide.</p>
+        <div class="social-links" style="margin-top:20px;">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html"><i class="fas fa-chevron-right" style="font-size:10px;margin-right:8px;color:#f97316;"></i>Home</a></li>
+          <li><a href="about.html"><i class="fas fa-chevron-right" style="font-size:10px;margin-right:8px;color:#f97316;"></i>About</a></li>
+          <li><a href="services.html"><i class="fas fa-chevron-right" style="font-size:10px;margin-right:8px;color:#f97316;"></i>Services</a></li>
+          <li><a href="portfolio.html"><i class="fas fa-chevron-right" style="font-size:10px;margin-right:8px;color:#f97316;"></i>Portfolio</a></li>
+          <li><a href="contact.html"><i class="fas fa-chevron-right" style="font-size:10px;margin-right:8px;color:#f97316;"></i>Contact</a></li>
+          <li><a href="careerPage.html"><i class="fas fa-chevron-right" style="font-size:10px;margin-right:8px;color:#f97316;"></i>Career</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services-details.html"><i class="fas fa-chevron-right" style="font-size:10px;margin-right:8px;color:#f97316;"></i>Web Development</a></li>
+          <li><a href="services-details.html"><i class="fas fa-chevron-right" style="font-size:10px;margin-right:8px;color:#f97316;"></i>Mobile Development</a></li>
+          <li><a href="services-details.html"><i class="fas fa-chevron-right" style="font-size:10px;margin-right:8px;color:#f97316;"></i>Cloud Services</a></li>
+          <li><a href="services-details.html"><i class="fas fa-chevron-right" style="font-size:10px;margin-right:8px;color:#f97316;"></i>IT Consulting</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact Info</h4>
+        <ul class="contact-info">
+          <li>
+            <i class="fas fa-map-marker-alt"></i>
+            <span>No.994, Sri Sai Tower, 1st Main Koramangala, Koramangala I Block, Bangalore South, Bangalore- 560034, Karnataka</span>
+          </li>
+          <li>
+            <i class="fas fa-phone"></i>
+            <span>+1 234 567 890</span>
+          </li>
+          <li>
+            <i class="fas fa-envelope"></i>
+            <span>contactus@rupadi.com</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Rupadi International Private Ltd. All rights reserved. | Crafted with <span style="color:#f97316;">&#9829;</span> by Rupadi</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll to top -->
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<!-- ════════════════════ SCRIPTS ════════════════════ -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="../assets/js/main.js"></script>
+<script>
+  // AOS init
+  AOS.init({
+    duration: 800,
+    easing: 'ease-in-out',
+    once: true,
+    mirror: false,
+    offset: 100
+  });
+
+  // Scroll-to-top
+  const scrollTopBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      scrollTopBtn.classList.add('visible');
+    } else {
+      scrollTopBtn.classList.remove('visible');
+    }
+    // Header scrolled class
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Mobile menu — uses 'mobile-open' so it doesn't conflict with style.css nav.active (which sets position:fixed)
+  const menuBtn = document.querySelector('.mobile-menu-btn');
+  const nav = document.querySelector('header nav');
+  if (menuBtn && nav) {
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = nav.classList.toggle('mobile-open');
+      menuBtn.querySelector('i').className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+    });
+    document.addEventListener('click', (e) => {
+      if (!menuBtn.contains(e.target) && !nav.contains(e.target)) {
+        nav.classList.remove('mobile-open');
+        const icon = menuBtn.querySelector('i');
+        if (icon) icon.className = 'fas fa-bars';
+      }
+    });
+  }
+
+  // Counter animation for stats
+  const counters = document.querySelectorAll('.stat-card h3');
+  const speed = 2000;
+
+  const animateCounter = (el) => {
+    const text = el.innerText;
+    const target = parseInt(text.replace(/\D/g, ''));
+    const suffix = text.replace(/[0-9]/g, '').trim();
+    let count = 0;
+    const increment = target / (speed / 16);
+
+    const update = () => {
+      count += increment;
+      if (count < target) {
+        el.querySelector ? null : (el.innerHTML = Math.ceil(count) + '<span style="font-size:2rem;">' + suffix + '</span>');
+        requestAnimationFrame(update);
+      } else {
+        el.innerHTML = target + '<span style="font-size:2rem;">' + suffix + '</span>';
+      }
+    };
+    update();
+  };
+
+  // IntersectionObserver for counter animation
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const h3 = entry.target.querySelector('h3');
+        if (h3 && !h3.dataset.animated) {
+          h3.dataset.animated = true;
+          animateCounter(h3);
+        }
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.stats-strip .stat-card').forEach(card => statsObserver.observe(card));
+</script>
+</body>
+</html>
